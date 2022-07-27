@@ -50,8 +50,8 @@ resource "aws_instance" "web" {
                #!/bin/bash
                apt update
                apt install -y apache2
-               chmod -R 777 /var/www/htdocs
-               systemctl restart apache2              
+               chmod 777 /var/www/htdocs
+               systemctl restart apache2            
                EOF
 
   tags = {

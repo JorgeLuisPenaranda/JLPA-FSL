@@ -74,6 +74,10 @@ jobs:
         name: buildfoler
         path: builddown/
 
+    - name: Sleep 25s
+      run: sleep 20s
+      shell: bash
+
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@main
       env:
