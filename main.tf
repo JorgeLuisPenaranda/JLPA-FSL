@@ -10,7 +10,7 @@ terraform {
     organization = "fslorg"
 
     workspaces {
-      name = "Production"
+      name = "Dev"
     }
   }
 
