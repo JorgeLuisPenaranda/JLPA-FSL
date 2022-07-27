@@ -60,7 +60,7 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_security_group" "fslsg" {
-  name        = "$(random_pet.sg.id)-sg"
+  name        = "dev-sg"
   
   ingress {
     from_port        = 80
