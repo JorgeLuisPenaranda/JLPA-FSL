@@ -46,6 +46,14 @@ resource "aws_instance" "web" {
   key_name = "jpenaranda"
   vpc_security_group_ids = [ aws_security_group.fslsg.id ]
 
+  user_data =  <<-EOF
+               #!/bin/bash
+               apt update
+               apt install -y apache2
+               chmod -R 777 /var/www/htdocs
+               systemctl restart apache2              
+               EOF
+
   tags = {
     Name = "FSL test"
   }

@@ -78,7 +78,7 @@ jobs:
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-        SOURCE: "dist/"
+        SOURCE: "builddown/"
         REMOTE_HOST: ${{ env.EC2ADDR }}
         REMOTE_USER: "ubuntu"
         TARGET: "/var/www/html/"
