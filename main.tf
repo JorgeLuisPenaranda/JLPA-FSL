@@ -22,6 +22,8 @@ provider "aws" {
   region = "us-west-2"
 }
 
+resource "random_pet" "sg" {}
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -50,7 +52,7 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_security_group" "fslsg" {
-  name        = "allow_tls"
+  name        = "$(random_pet.sg.id)-sg"
   
   ingress {
     from_port        = 80
@@ -77,4 +79,9 @@ resource "aws_security_group" "fslsg" {
   tags = {
     Name = "allow_tls"
   }
+}
+
+output "publicaddr" {
+    value = "${aws_instance.web.public_dns}"
+  
 }
