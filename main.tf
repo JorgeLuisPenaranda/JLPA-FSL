@@ -44,7 +44,7 @@ resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   key_name = "jpenaranda"
-  vpc_security_group_ids = [vpc_security_group.fslsg.id]
+  vpc_security_group_ids = [ aws_security_group.fslsg.id ]
 
   tags = {
     Name = "FSL test"
