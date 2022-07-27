@@ -78,7 +78,7 @@ jobs:
       run: sleep 20s
       shell: bash
 
-    - name: Deploy to Staging server
+    - name: Deploy to AWS EC2
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
