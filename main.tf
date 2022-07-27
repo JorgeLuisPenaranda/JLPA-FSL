@@ -50,7 +50,7 @@ resource "aws_instance" "web" {
                #!/bin/bash
                apt update
                apt install -y apache2
-               chmod 777 /var/www/htdocs
+               chmod 777 /var/www/html
                systemctl restart apache2            
                EOF
 
